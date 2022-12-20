@@ -1,16 +1,24 @@
 body {
     margin: 0;
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: gainsboro;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
-    height: 20%;
+    height: 25vh;
+    width: 100%;
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.container-XL {
+    height: 40vh;
     width: 100%;
     background-color: darkslategrey;
     display: flex;
@@ -87,14 +95,63 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    animation: scroll 10s linear infinite;
+    animation: scroll 20s linear infinite;
 }
 
 .reel h1 {
     color: white;
 }
 
+.reel h1:hover {
+    color: gold;
+}
+
 @keyframes scroll {
     0% { transform: translateX(0%);}
     100% { transform: translateX(-100%);}
 }
+
+.infinite-scrolling-reel:hover .reel {
+    animation-play-state: paused;
+}
+
+/*---------------------------------------------------------------------------*/
+
+.card-stack {
+    height: 80%;
+    width: 25%;
+    background-color: gainsboro;
+    border-radius: 20px;
+    
+    
+}
+
+.card-mid {
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    border-radius: 20px;
+    z-index: 2;
+    transition-duration: 1s;
+}
+
+.card-bot {
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
+    border-radius: 20px;
+    z-index: 1;
+    transition-duration: 1s;
+}
+
+.card-stack:hover .card-mid {
+    transform: translateX(120%);
+    transition-duration: 1s;
+}
+
+.card-stack:hover .card-bot {
+    transform: translateX(120%);
+    transition-duration: 1s;
+}
+
+/*---------------------------------------------------------------------------*/
