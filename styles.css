@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gainsboro;
+    overflow: hidden;
+}
+
+.container {
+    height: 20%;
+    width: 100%;
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.glowy-button {
+    height: 90px;
+    width: 240px;
+    border-radius: 50px;
+    font-size: 34px;
+    border: none;
+    background-color: black;
+    outline: none;
+    color: white;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.glowy-button-outer {
+    height: 100px;
+    width: 250px;
+    border-radius: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    
+}
+
+.glowy-button-outer:hover {
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: spin 1.5s infinite;
+}
+
+.glowy-button-blur {
+    position: absolute;
+    height: 105px;
+    width: 265px;
+    border-radius: 50px;
+    z-index: 1;
+    filter: blur(20px);
+}
+
+.glowy-button-outer:hover .glowy-button-blur {
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+}
+
+@keyframes spin {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+.infinite-scrolling-reel {
+    height: 80%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 25%;
+}
+
+.reel {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    animation: scroll 10s linear infinite;
+}
+
+.reel h1 {
+    color: white;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0%);}
+    100% { transform: translateX(-100%);}
+}
